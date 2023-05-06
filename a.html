@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style> 
+        .main{
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://wallpapercave.com/wp/vyjuDqM.jpg');
+            position: relative;
+        }
+#jadu{
+
+    font-size: 36px;
+    color: rgb(42, 16, 16);
+    position: absolute;
+    top: 10vh;
+    left: 0vh;
+
+}
+
+      
+    </style>
+</head>
+<body  onload="fun()">
+
+
+   
+    <div class="main">
+        <div id="jadu"><i onclick="caught_me()" class="fa-solid fa-ghost"></i></div>
+    </div>
+
+    <script>
+    let x= document.getElementById('jadu')
+    x.style.left='0vh'
+    let y= document.getElementById('jadu')
+    y.style.top='0vh'
+
+       function fun(){
+        let val=10
+
+
+           let xpos=x.style.left || '0vh'
+           xpos=xpos.split('vh')[0]
+           let ypos=y.style.top || '0vh'
+           ypos=ypos.split('vh')[0]
+        
+        let a=Math.round(Math.random())
+        let b=Math.round(Math.random())
+            if (a==0) {xpos=Number(xpos)+val}else{xpos=Number(xpos)-val}
+            if (b==0) {ypos=Number(ypos)+val}else{ypos=Number(ypos)-val}
+        if(xpos>90){xpos=0}
+        if(ypos>90){ypos=0}
+        if(xpos<00){xpos=90}
+        if(ypos<00){ypos=90}
+
+
+        x.style.left=xpos+'vh'
+        y.style.top=ypos+'vh'
+       
+           console.log(xpos,ypos)
+
+
+        setTimeout(fun,1000)
+       }
+
+       function caught_me(){
+        let rn=randomIntFromInterval(1,4)
+
+        if(rn==1){
+            alert('Congratulations! you got placed salary is 5.0 LPA')
+        }
+        
+        if(rn==2){
+            alert('stop playing game and do some actual work')
+        }
+        
+        if(rn==3){
+            alert('you are wasting my time')
+        }
+        
+        if(rn==4){
+            alert('ne pani nuvu chusko')
+        }
+
+        
+       }
+
+
+
+       function randomIntFromInterval(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+    </script>
+
+
+    
+</body>
+</html>
